@@ -45,7 +45,7 @@ io_in[15:0] ---+----> [ MUXD ] <- fbus - [ FU ]           |
 The program reads four unsorted digits from the I/O input buffer, sorts them in descending order inside the register bank, and writes the sorted sequence back to the I/O port
 
 * **Fetch–Execute Cycle (`st_r`):** The Control Unit alternates between Instruction Fetch (`INF`, reading instructions from memory addresses `34–38` on `a_out`) and Execute (`EX0`)
-* **I/O Bus Handshake (`IOW`):** During cycles `66, 68, 70, 72`, the core decodes `IOW` instructions (`0x4201`–`0x4204`), asserts `iom_out = 1` and active-low `wen_out = 0`, and outputs the sorted values (**`9`**, **`8`**, **`7`**, **`1`**) onto `d_out[15:0]`
+* **I/O Bus Control (`IOW`):** During cycles `66, 68, 70, 72`, the core decodes `IOW` instructions (`0x4201`–`0x4204`), asserts `iom_out = 1` and active-low `wen_out = 0`, and outputs the sorted values (**`9`**, **`8`**, **`7`**, **`1`**) onto `d_out[15:0]`
 * **Program Halt (`HAL`):** At cycle `74`, the processor decodes the `HAL` instruction (`0xfe00`) and transitions permanently into the `HLT` state at cycle `75`
 
 ### Note
