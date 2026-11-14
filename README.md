@@ -42,7 +42,7 @@ io_in[15:0] ---+----> [ MUXD ] <- fbus - [ FU ]           |
 ## Simulation example
 <img width="1236" height="570" alt="week8_bubble_wave" src="https://github.com/user-attachments/assets/fd83cc2f-11c6-4600-8a99-0712919bd042" />
 
-The program reads four unsorted digits (1798) from the I/O input buffer, sorts them in descending order inside the register bank, and writes the sorted sequence back to the I/O port
+The program reads four unsorted digits (1798) from the I/O input buffer, sorts them in descending order inside the register bank, and writes the sorted sequence back to the I/O port.
 The waveform captures the final output and phase, where the sorted values are written to the peripheral I/O port:
 
 * **Fetch–Execute Cycle (`st_r`):** The Control Unit alternates between Instruction Fetch (`INF`, reading instructions from memory addresses `34–38` on `a_out`) and Execute (`EX0`)
